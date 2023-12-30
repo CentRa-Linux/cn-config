@@ -20,9 +20,12 @@
     starship
     any-nix-shell
 
+    gitAndTools.gh
+
     # misc
     pingu
     noisetorch
+    appimage-run
   ];
   programs.obs-studio = {
     enable = true;

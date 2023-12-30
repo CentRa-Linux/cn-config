@@ -12,7 +12,7 @@
       nixos-cn-victus = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./system/configuration.nix
+          ./system/victus/configuration.nix
         ];
       };
     };

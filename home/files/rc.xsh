@@ -155,18 +155,30 @@ builtins.aliases["zi"] = __zoxide_zi  # type: ignore  # pylint:disable=no-member
 #
 # execx($(zoxide init xonsh), 'exec', __xonsh__.ctx, filename='zoxide')
 
-import prompt_starship
-
 $XONTRIB_PROMPT_BAR_THEME = {
     'left': '{hostname}{user}{cwd_abs#accent}',
     'right': '{hist_status#section}{curr_branch#section}{env_name#strip_brackets#section}{date_time_tz}',
-    'bar_bg': '{BACKGROUND_#323232}',
+    'bar_bg': '{#31363b}',
     'bar_fg': '{#AAA}',
     'section_bg': '{BACKGROUND_#444}',
     'section_fg': '{#CCC}',
     'accent_fg': '{BOLD_#DDD}',
 }
 
+mkdir -p ~/.config && echo @("""
+[character]
+success_symbol = ""
+error_symbol = ""
+[status]
+symbol = ""
+""".strip()) > ~/.config/starship_xonsh_right.toml
+
+# Then just add the starship bar to right
+$XONTRIB_PROMPT_STARSHIP_RIGHT_CONFIG = "~/.config/starship_xonsh_right.toml"
+$XONTRIB_PROMPT_STARSHIP_REPLACE_PROMPT = False
+$XONTRIB_PROMPT_BAR_RIGHT = '{starship_right#noesc#nonl#strip}'
+
 import prompt_bar
+import prompt_starship
 
 xontrib load coreutils

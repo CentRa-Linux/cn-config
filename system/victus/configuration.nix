@@ -150,6 +150,7 @@
     xonsh
     starship
     any-nix-shell
+    libsndfile
   ];
 
   virtualisation = {
