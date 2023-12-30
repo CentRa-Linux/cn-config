@@ -27,6 +27,9 @@
     noisetorch
     appimage-run
   ];
+  home.sessionVariables = {
+    MOZ_ENABLE_WAYLAND = 1;
+  };
   programs.obs-studio = {
     enable = true;
   };

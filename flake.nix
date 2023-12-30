@@ -15,6 +15,12 @@
           ./system/victus/configuration.nix
         ];
       };
+      nixos-cn-latte = inputs.nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./system/latte/configuration.nix
+        ];
+      };
     };
     homeConfigurations = {
       centra = inputs.home-manager.lib.homeManagerConfiguration {
