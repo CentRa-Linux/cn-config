@@ -8,5 +8,9 @@
       target = ".config/xonsh/prompt_starship.py";
       source = ./files/prompt_starship.py;
     };
+    "prompt_bar.py" = {
+      target = ".config/xonsh/prompt_bar.py";
+      source = ./files/prompt_bar.py;
+    };
   };
 }

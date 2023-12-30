@@ -157,8 +157,16 @@ builtins.aliases["zi"] = __zoxide_zi  # type: ignore  # pylint:disable=no-member
 
 import prompt_starship
 
-$XONTRIB_PROMPT_STARSHIP_LEFT_CONFIG = "~/.config/starship_xonsh_left.toml"
-$XONTRIB_PROMPT_STARSHIP_RIGHT_CONFIG = "~/.config/starship_xonsh_right.toml"
-$XONTRIB_PROMPT_STARSHIP_BOTTOM_CONFIG = "~/.config/starship_xonsh_bottom.toml"
+$XONTRIB_PROMPT_BAR_THEME = {
+    'left': '{hostname}{user}{cwd_abs#accent}',
+    'right': '{hist_status#section}{curr_branch#section}{env_name#strip_brackets#section}{date_time_tz}',
+    'bar_bg': '{BACKGROUND_#323232}',
+    'bar_fg': '{#AAA}',
+    'section_bg': '{BACKGROUND_#444}',
+    'section_fg': '{#CCC}',
+    'accent_fg': '{BOLD_#DDD}',
+}
+
+import prompt_bar
 
 xontrib load coreutils
