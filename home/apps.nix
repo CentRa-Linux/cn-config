@@ -25,6 +25,7 @@
     # misc
     pingu
     noisetorch
+    qpwgraph
     appimage-run
   ];
   home.sessionVariables = {
