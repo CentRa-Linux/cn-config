@@ -16,6 +16,7 @@
 
     # shell
     xonsh
+    eza
     zoxide
     starship
     any-nix-shell
@@ -27,6 +28,7 @@
     noisetorch
     qpwgraph
     appimage-run
+    libsForQt5.discover
   ];
   home.sessionVariables = {
     MOZ_ENABLE_WAYLAND = 1;

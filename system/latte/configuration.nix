@@ -78,6 +78,9 @@
     #media-session.enable = true;
   };
 
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -103,7 +106,16 @@
     starship
     any-nix-shell
     libsndfile
+    colord
+    argyllcms
+    gnome.gnome-color-manager
+    libsForQt5.colord-kde
+    displaycal
   ];
+
+  environment.sessionVariables = rec {
+    MOZ_ENABLE_WAYLAND = "1";
+  };
 
   virtualisation = {
     docker = {
@@ -126,6 +138,7 @@
   programs.xonsh.enable = true;
   programs.noisetorch.enable = true;
   programs.dconf.enable = true;
+  services.colord.enable = true;
 
   i18n.inputMethod = {
     enabled = "fcitx5";
@@ -137,15 +150,15 @@
       noto-fonts-cjk-serif
       noto-fonts-cjk-sans
       noto-fonts-emoji
-      mplus-outline-fonts.githubRelease
+      google-fonts
       nerdfonts
     ];
     fontDir.enable = true;
     fontconfig = {
       defaultFonts = {
-        serif = ["Noto Serif CJK JP" "Noto Color Emoji"];
+        serif = ["M PLUS 1" "Noto Serif CJK JP" "Noto Color Emoji"];
         sansSerif = ["M PLUS 1" "Noto Sans CJK JP" "Noto Color Emoji"];
-        monospace = ["M+1Code Nerd Font" "JetBrainsMono Nerd Font" "Noto Color Emoji"];
+        monospace = ["M+1Code Nerd Font" "Noto Color Emoji"];
         emoji = ["Noto Color Emoji"];
       };
     };
